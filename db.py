@@ -12,11 +12,12 @@ def get_connection():
     return psycopg2.connect(dsn)
 
 
-def cursor_execute(sql):
-    """sqlを実行する関数　select文なら実行結果を返す"""
+def cursor_execute(sql, params=()):
+    """sqlを実行する関数 select文なら実行結果を返す"""
     with get_connection() as conn:
         with conn.cursor() as cur:
-            cur.execute(sql)
+            # cur.execute(sql)
+            cur.execute(sql, params)
             if sql.split(" ")[0] == "SELECT":
                 customers = cur.fetchall()
                 return customers
@@ -34,7 +35,13 @@ def get_all_customers():
     return customers
 
 
+def add_customer(name, age):
+    sql = "INSERT INTO customers VALUES (%(name)s, %(age)s);"
+    params = {"name": name, "age": age}
+    cursor_execute(sql, params)
+
+
 if __name__ == '__main__':
     init_db()
 
-# print(init_db().__doc__)
+    # print(init_db().__doc__)
