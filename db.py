@@ -35,9 +35,9 @@ def get_all_customers():
     return customers
 
 
-def add_customer(name, age):
-    sql = "INSERT INTO customers VALUES (%(name)s, %(age)s);"
-    params = {"name": name, "age": age}
+def add_customer(item, improvement):
+    sql = "INSERT INTO customers VALUES (%(item)s, %(improvement)s);"
+    params = {"item": item, "improvement": improvement}
     cursor_execute(sql, params)
 
 

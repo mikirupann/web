@@ -1,0 +1,22 @@
+.pull {
+    font-size: 30px;
+    margin: 13px;
+}
+h1 {
+    font-size: 50px;
+    color: red;
+    }
+h2 {
+    font-size: 40px;
+}
+
+.hyou1 {
+    float: left;
+    margin: 16px;
+}
+html {
+   overflow-x : hidden;
+}
+body {
+   overflow-x : hidden;
+}
