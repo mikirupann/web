@@ -42,8 +42,8 @@ def add_customer(item, improvement):
 
 
 def get_info(sdgsid):
-    sql = "SELECT SDGsid, improvement FROM customers WHERE sdgsid = sdgsid;"
-    get_infos = cursor_execute(sql)
+    sql = "SELECT SDGsid, improvement FROM customers WHERE SDGsid = %(sdgsid)s;"
+    get_infos = cursor_execute(sql, {"sdgsid": sdgsid})
     return get_infos
 
 
