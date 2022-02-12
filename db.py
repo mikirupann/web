@@ -40,7 +40,6 @@ def add_customer(item, improvement):
     params = {"item": item, "improvement": improvement}
     cursor_execute(sql, params)
 
-
 def get_info(sdgsid):
     sql = "SELECT SDGsid, improvement FROM customers WHERE sdgsid = sdgsid;"
     get_infos = cursor_execute(sql)
