@@ -35,19 +35,13 @@ def get_all_customers():
     return customers
 
 
-def add_customer(item, improvement):
-    sql = "INSERT INTO customers VALUES (%(item)s, %(improvement)s);"
-    params = {"item": item, "improvement": improvement}
-    cursor_execute(sql, params)
-
-
 def get_info(sdgsid):
     sql = "SELECT SDGsid, improvement FROM customers WHERE SDGsid = %(sdgsid)s;"
     get_infos = cursor_execute(sql, {"sdgsid": sdgsid})
-    return get_infos
+    print(get_infos)
 
 
 if __name__ == '__main__':
     init_db()
 
-    # print(init_db().__doc__)
+# print(init_db().__doc__)
